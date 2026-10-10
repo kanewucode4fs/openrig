@@ -1,1 +1,0 @@
-../../../../docs/reference/instance-layout.md

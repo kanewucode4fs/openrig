@@ -1,56 +1,40 @@
-node_modules/
-node_modules
-dist/
+# 本机系统与编辑器文件
 .DS_Store
-*.log
+.idea/
+.vscode/
 
-# 保留既有公开文档，并纳入新平台 SDD 文档
-docs/*
-!docs/as-built/
-!docs/reference/
-!docs/project-reform/
-!docs/00-总索引.md
-!docs/01-需求文档/
-!docs/02-业务架构/
-!docs/03-技术架构/
-!docs/04-部署文档/
-!docs/05-使用手册/
-!docs/06-交付审计/
-!docs/superpowers/
-!docs/releases/
-!docs/releases/**
-
-notes/*
-
-# Local environment
+# 本地凭证与配置
 .env
-.env.local
+.env.*
+!.env.example
+!.env.*.example
+
+# Python 环境与生成文件
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+.coverage
+.coverage.*
+htmlcov/
+
+# 前端依赖与生成文件
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# 本机执行状态与诊断
+*.log
 *.sqlite
 *.sqlite-journal
 *.sqlite-shm
 *.sqlite-wal
 *.sqlite.pre-reboot-backup
 .openrig/
-.claude/*
-!.claude/skills/
-.claude/skills/*
-!.claude/skills/developing-openrig/
-.agents/*
-!.agents/skills/
-.agents/skills/*
-!.agents/skills/developing-openrig/
-.openrig
 .worktrees/
-
-# Local demo proof artifacts
-demo/proof/
-
-# Build artifacts
-*.tgz
-
-# OPR.0.5.3.7 R2 — the shipped context-pack projection is DERIVED AT PACKAGE TIME
-# (scripts/generate-context-packs.mjs), never committed or edited in place.
-packages/daemon/context-packs/
-
-# Internal build receipts; never commit
 /.evidence/

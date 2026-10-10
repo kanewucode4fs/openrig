@@ -17,8 +17,8 @@
 ## 代码与分支
 
 - 在当前仓库 `/Users/kanewu/Documents/TechSet/openrig` 的 `feature/chinese-multihost-baseline` 分支建设；不另建仓库，不自行切换分支或创建工作树。
-- 保留原 `packages/`、源码历史、LICENSE、remotes 和日用 OpenRig 进程；新平台不依赖 OpenRig 的运行时、数据库或终端控制层。
-- 新平台的依赖清单、锁文件、构建和部署入口独立。根 `package.json` 及原 npm workspace 当前属于 OpenRig，不将其构建成功当成新平台通过。
+- 原 OpenRig 源码、旧 CI、脚本和依赖已从当前工作区退出，通过 Git 基准 `29c2a56104e6247d289267685264b96fac46ec2a` 追溯；保留 LICENSE、Git 历史及 remotes，不操作日用 OpenRig 进程。
+- 当前工作区只建设新平台。依赖清单、锁文件、构建和部署入口按实施阶段建立，不继承旧 npm workspace 或历史测试通过结论。
 - 不自动 push、打 tag 或发布；不隐式 stash/reset，不提交无关改动。
 
 ## 技术栈
@@ -38,17 +38,15 @@
 | 目录 | 职责 |
 |---|---|
 | `docs/00-总索引.md` | 新平台标准文档导航 |
-| `docs/01-需求文档/` | 需求权威入口，引用现有原始需求 |
-| `docs/02-业务架构/` | 业务流程、角色和功能到实现的映射 |
-| `docs/03-技术架构/` | 技术边界和已落实设计 |
+| `docs/01-需求文档/` | 原始需求与标准需求入口，单点维护 |
+| `docs/02-业务架构/` | 业务流程、SDD 阶段拆分、角色及功能到实现的映射 |
+| `docs/03-技术架构/` | 技术边界、OpenRig 参考分析及既有阶段 0/A 规格草案 |
 | `docs/04-部署文档/` | 经验证的部署方法；当前仅初始化 |
 | `docs/05-使用手册/` | 已交付产品的操作说明；当前仅初始化 |
 | `docs/06-交付审计/` | 实际交付审计报告，不伪造通过结论 |
-| `docs/project-reform/` | 原始需求、OpenRig 研究、阶段拆分及已有规格草案 |
 | `docs/superpowers/specs/` | 后续阶段规格；既有草案通过索引引用，不重复复制 |
 | `docs/superpowers/plans/` | 规格评审后的详细实施计划 |
-| `frontend/`、`backend/`、`runner/` | 规划的新平台代码目录，实施到相应阶段才创建 |
-| `packages/`、原 `scripts/`、`docs/as-built/`、`docs/reference/` | OpenRig 参考源码、工具和文档 |
+| `frontend/`、`backend/`、`runner/` | 新平台代码目录，当前仅保留 `.gitkeep`，不代表已实现 |
 
 ## 工作流 override
 
@@ -56,7 +54,7 @@
 
 使用 `superpowers:brainstorming` 处理必要澄清及规格；规格评审后用 `superpowers:writing-plans`；计划评审并选定执行方式后使用对应执行技能；按适用的 TDD、审查和完成验证技能交付。延续已有决定，不重复询问已确定的路径、分支和技术栈。
 
-阶段与下一步以 [SDD 阶段拆分](docs/project-reform/SDD阶段拆分.md) 为入口。目前尚待阶段 0/A 规格评审，不开始产品编码。
+阶段与下一步以 [SDD 阶段拆分](docs/02-业务架构/SDD阶段拆分.md) 为入口。目前尚待阶段 0/A 规格评审，不开始产品编码。
 
 ## Vault 登记
 
