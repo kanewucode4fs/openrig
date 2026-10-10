@@ -4,10 +4,19 @@ dist/
 .DS_Store
 *.log
 
-# All docs are internal except as-built and reference
+# 保留既有公开文档，并纳入新平台 SDD 文档
 docs/*
 !docs/as-built/
 !docs/reference/
+!docs/project-reform/
+!docs/00-总索引.md
+!docs/01-需求文档/
+!docs/02-业务架构/
+!docs/03-技术架构/
+!docs/04-部署文档/
+!docs/05-使用手册/
+!docs/06-交付审计/
+!docs/superpowers/
 !docs/releases/
 !docs/releases/**
 
